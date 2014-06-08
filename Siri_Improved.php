@@ -23,6 +23,20 @@ Class siriImproved implements Plugin{
         console("[Siri] support and suggestions twitter.com/ipaddey\n");
     }
 
+    public function command($cmd, $params, $issuer){
+
+        $subcmd = strtolower(implode(" ", $params));
+        switch($subcmd){
+            case "hello":
+            case "hey":
+            case "hiya":
+            case "hai":
+            case "ello":
+                $reply = array("<Siri> Hellooooo", "<Siri> Greetings $issuer", "<Siri> How are you?");
+                $issuer->sendChat($reply[array_rand($reply)]);
+            break;
+        }
+    }
 
     public function __destruct(){
         //do nothing.
