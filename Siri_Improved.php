@@ -27,6 +27,7 @@ Class siriImproved implements Plugin{
 
         $subcmd = strtolower(implode(" ", $params));
         switch($subcmd){
+            //<Siri> Greetings!
             case "hello":
             case "hey":
             case "hiya":
@@ -34,6 +35,12 @@ Class siriImproved implements Plugin{
             case "ello":
                 $reply = array("<Siri> Hellooooo", "<Siri> Greetings $issuer", "<Siri> How are you?");
                 $issuer->sendChat($reply[array_rand($reply)]);
+            break;
+            //End Greetings
+
+            case "stop":
+            case "shutdown":
+                $issuer->sendChat("<Siri> you cannt stop that which has started.");
             break;
         }
     }
