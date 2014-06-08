@@ -1,0 +1,5 @@
+Todo!
+
+[] Add version checking from remote git version.txt file!
+[] Add multilanguage support!
+[] Add game mode changing
