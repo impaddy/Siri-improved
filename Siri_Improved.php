@@ -48,11 +48,15 @@ Class siriImproved implements Plugin{
             case "location":
             case "where am i?":
             case "where am i":
-                $c_x = ceil(round($issuer->entity->x), 2);
-                $c_y = ceil(round($issuer->entity->y), 2);
-                $c_z = ceil(round($issuer->entity->z), 2);
-                $current_world = $issuer->entity->level->getName();
-                $issuer->sendChat("<Siri> GPS: X: $c_x, Y: $c_y, Z: $c_z World: $current_world");
+                $player = $issuer;
+                $rawx = ceil($player->entity->x);
+                $x=round($rawx,1);
+                $rawy = ceil($player->entity->y);
+                $y = round($rawy,1);
+                $rawz = ceil($player->entity->z);
+                $z = round($rawz,1);
+                $current_world = $player->entity->level->getName();
+                $issuer->sendChat("<Siri> GPS: X: $rawx, Y: $rawy, Z: $rawz World: $current_world");
                 break;
 
         }
